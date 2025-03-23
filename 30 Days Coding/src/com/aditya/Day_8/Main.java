@@ -4,11 +4,14 @@ package com.aditya.Day_8;
 
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
+
+import static com.aditya.Day_8.Library.searchBookByTitle;
 
 class Book{
-    private String title;
-    private String author;
-    private int ISBN;
+    String title;
+    String author;
+    int ISBN;
 
 
     public Book(String author, int ISBN, String title) {
@@ -16,44 +19,79 @@ class Book{
         this.ISBN = ISBN;
         this.title = title;
     }
+
+    public Book(String author, String title) {
+        this.author = author;
+        this.title = title;
+    }
+
+    public Book(String title, int ISBN) {
+        this.title = title;
+        this.ISBN = ISBN;
+    }
 }
 class Library{
-    ArrayList<String> books = new ArrayList<>();
+    static ArrayList<Book> books = new ArrayList<>();
 
-    void addBook(String book_name){
-        books.add(book_name);
-        System.out.println("New Book Added !!!");
+    void addBook(Book newBook){
+        books.add(newBook);
 
     }
-
-    void displayBooks(){
+    static void displayBooks(){
         if (books.isEmpty()) {
-            System.out.println("No Books In The Library!!!");
-
+            System.out.println("Library Is Empty !!!");
+            return;
         }
         else{
-            System.out.println("Library Book :-");
-            for (String book : books) {
-                System.out.println(book);
+            int i = 1;
+            System.out.println("Displaying Books In Library:-");
+            for (Book book : books) {
+                System.out.println(i+") "+book.title+" "+book.author+" "+book.ISBN);
+                i++;
             }
         }
     }
-    void searchBookByTitle(String Title){
-        for (String i : books){
-            if (Objects.equals(books.get(Integer.parseInt(i)), Title)){
-                System.out.println("Found");
-                return;
-            }
+    static Book searchBookByTitle(String bookName) {
+        if (books.isEmpty()) {
+            System.out.println("Library is Empty!");
+            return null;
         }
-        System.out.println("Not Found");
 
+        for (Book book : books) {
+            if (book.title.equalsIgnoreCase(bookName)) {
+                System.out.println("Book Found: " + book.title);
+                return book;
+            }
+        }
+        System.out.println("Book is Unavailable.");
+        return null;
     }
+
 }
 public class Main {
     public static void main(String[] args) {
-        Library obj = new Library();
-        obj.addBook("Ramayan");
-        obj.displayBooks();
-        obj.searchBookByTitle("Ramayan");
+        Scanner sc = new Scanner(System.in);
+
+
+
+        Library library = new Library();
+
+        for (int i = 0; i < 2; i++) {
+            System.out.println("Enter Book Title :-");
+            String title = sc.nextLine();
+            System.out.println("Enter Book Author :-");
+            String author = sc.nextLine();
+            System.out.println("Enter Book ISBN :-");
+            int ISBN = sc.nextInt();
+            sc.nextLine();
+
+            library.addBook(new Book(author,ISBN,title));
+        }
+        System.out.println("Enter Book Title For Searching:-");
+        String booSearch = sc.nextLine();
+
+        Library.displayBooks();
+        searchBookByTitle(booSearch);
+
     }
 }
