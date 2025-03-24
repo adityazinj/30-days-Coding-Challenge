@@ -1,4 +1,4 @@
-package com.aditya.Day_3;
+package com.aditya.Day_03;
 
 //Write a program to check if a given number is prime or not.
 public class Main {

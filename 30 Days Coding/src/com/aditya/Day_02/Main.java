@@ -1,4 +1,4 @@
-package com.aditya.Day_2;
+package com.aditya.Day_02;
 //Given a sorted array arr[] and a number x,
 //write a function to count the occurrences of x in arr[].
 public class Main {

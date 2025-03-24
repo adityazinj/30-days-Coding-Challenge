@@ -1,4 +1,4 @@
-package com.aditya.Day_6;
+package com.aditya.Day_06;
 //Write a program to search is x is present in the array or not
 public class Main {
     public static void main(String[] args) {

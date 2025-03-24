@@ -1,9 +1,7 @@
-package com.aditya.Day_1;
+package com.aditya.Day_01;
 
 
 //Kth Largest Element
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {

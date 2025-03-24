@@ -1,4 +1,4 @@
-package com.aditya.Day_9;
+package com.aditya.Day_09;
 
 
 import java.util.Scanner;

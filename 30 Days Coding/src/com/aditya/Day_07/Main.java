@@ -1,4 +1,4 @@
-package com.aditya.Day_7;
+package com.aditya.Day_07;
 
 //Create a Java program to simulate a Bank Account Management System
 // using inheritance and polymorphism.

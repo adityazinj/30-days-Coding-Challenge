@@ -1,4 +1,4 @@
-package com.aditya.Day_5;
+package com.aditya.Day_05;
 
 // write a program to arrange the numbers in:
 //Ascending And Descending Order

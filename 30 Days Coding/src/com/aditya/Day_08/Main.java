@@ -1,12 +1,11 @@
-package com.aditya.Day_8;
+package com.aditya.Day_08;
 
 //Create a Library Management System using classes and constructor overloading.
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
-import static com.aditya.Day_8.Library.searchBookByTitle;
+import static com.aditya.Day_08.Library.searchBookByTitle;
 
 class Book{
     String title;

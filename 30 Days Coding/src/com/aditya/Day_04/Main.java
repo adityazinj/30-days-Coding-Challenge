@@ -1,4 +1,4 @@
-package com.aditya.Day_4;
+package com.aditya.Day_04;
 
 //Write a program to find the factorial of a number using recursion.
 public class Main {
